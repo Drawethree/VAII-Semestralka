@@ -19,13 +19,6 @@
 
   <body>
 
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>Stránka je vo vývoji! Viac funkcionalít čoskoro...</strong>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand">
           <img src="img/profilovka.png" width="30" height="30" alt="">
@@ -38,14 +31,17 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">Domov <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Domov <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="o-mne.html">O Mne</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="kontakt.html">Kontakt</a>
+        <a class="nav-link" href="kontakt.php">Kontakt</a>
       </li>
+        <li class="nav-item">
+            <a class="nav-link" href="emaily.php">Emaily</a>
+        </li>
     </ul>
   </div>
 </nav>

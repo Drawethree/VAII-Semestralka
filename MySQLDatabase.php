@@ -3,35 +3,28 @@
 
 class MySQLDatabase {
 
-private $host;
-private $user;
-private $password;
-private $connection;
+private string $host;
+private string $user;
+private string $password;
+private mysqli $connection;
 
-    /**
-     * MySQLDatabase constructor.
-     * @param $host
-     * @param $user
-     * @param $password
-     */
-    public function __construct($host, $user, $password)
+    public function __construct()
     {
-        $this->host = $host;
-        $this->user = $user;
-        $this->password = $password;
-
+        $this->host = "localhost";
+        $this->user = "root";
+        $this->password = "dtb456";
         $this->connect();
     }
 
 
-    private function connect()
+    public function connect() : bool
     {
-        $this->connection = mysqli_connect($this->servername, $this->username, $this->password);
+        $this->connection = mysqli_connect($this->host, $this->user, $this->password);
 
         if (!$this->connection) {
-            die("Connection failed: " . mysqli_connect_error());
+            return false;
         }
-        echo "Connected successfully";
+        return true;
     }
 
     public function close() {
@@ -41,7 +34,12 @@ private $connection;
     }
 
     public function runSql($sql) : bool {
-        return ($this->connection->query($sql));
+        return (mysqli_query($this->connection, $sql));
+    }
+
+    public function getConnection() : mysqli
+    {
+        return $this->connection;
     }
 }
 ?>
